@@ -1,7 +1,6 @@
 // https://developer.wordpress.com/docs/photon/api/
 
-import React from 'react'
-import { CSSProperties } from '@material-ui/core/styles/withStyles'
+import React, { CSSProperties } from 'react'
 
 const PHOTON_HOSTS = ['i0.wp.com', 'i1.wp.com', 'i2.wp.com', 'i3.wp.com']
 

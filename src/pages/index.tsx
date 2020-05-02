@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import fetch from 'node-fetch'
-import { GetStaticProps } from 'next'
 import InfiniteScroll from 'react-infinite-scroller'
 
 import useAllPosts from '../hooks/useAllPosts'
@@ -51,7 +50,7 @@ export default function AllNews({ posts }: { posts: PostInterface[] }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${API_URL}?per_page=12`)
 
   return {

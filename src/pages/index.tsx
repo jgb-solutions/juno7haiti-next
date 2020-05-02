@@ -17,7 +17,7 @@ export default function AllNews({ posts }: { posts: NewsInterface[] }) {
         pageStart={2}
         loadMore={loadMore}
         hasMore={hasMore}
-        loader={<div key="loading">Chargement...</div>}
+        loader={<p key="isLoading">Chargement...</p>}
         useWindow={false}
         initialLoad={false}
       >

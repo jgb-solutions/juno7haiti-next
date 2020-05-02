@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="fr">
         <Head>
+          <meta charSet="ut8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" key="http-equiv" />
           <meta name="viewport" content="width=device-width, initial-scale=1" key="viewport" />
 
@@ -22,30 +23,11 @@ export default class MyDocument extends Document {
 
           <link rel="stylesheet" href="/assets/css/main.css" />
 
-          <link
-            rel="icon"
-            href="https://demo.themeregion.com/newshub/images/ico/favicon.ico"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="https://demo.themeregion.com/newshub/images/ico/apple-touch-icon-144-precomposed.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="https://demo.themeregion.com/newshub/images/ico/apple-touch-icon-114-precomposed.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="https://demo.themeregion.com/newshub/images/ico/apple-touch-icon-72-precomposed.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="https://demo.themeregion.com/newshub/images/ico/apple-touch-icon-57-precomposed.png"
-          />
+          <link rel="icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+          <link rel="icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+          <link rel="apple-touch-icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=180%2C180&#038;ssl=1" />
+          <meta name="msapplication-TileImage" content="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=270%2C270&#038;ssl=1" />
+
           {/* <script dangerouslySetInnerHTML={{
             __html: `
               window.onload = function(e) {

@@ -1101,33 +1101,9 @@ ul.sub-menu .sub-menu-2 {
 	background-color: #303233;
 }
 
-.topbar-bg-color-2 a,
-.topbar-bg-color-2 .user a,
-.topbar-bg-color-2 .search-icon,
-.topbar-bg-color-2 .searchNlogin li a,
-.topbar-bg-color-2 #ticker li a,
-.topbar-bg-color-2 .user-dropdown > a:hover,
-.topbar-bg-color-2 .searchNlogin .search-icon:hover {
-	color: #fff;
-}
-
 .topbar-bg-color-2 .breaking-news span {
 	background-color: transparent;
 	color: #fff;
-}
-
-.topbar-bg-color-2 .sub-menu {
-	border-top-color: #fff;
-	background-color: #303233;
-}
-
-.topbar-bg-color-2 .topbar-right,
-.topbar-bg-color-2 .searchNlogin li {
-	border-left-color: #444647;
-}
-
-.topbar-bg-color-2 .breaking-news span {
-	border-right-color: #444647;
 }
 
 .topbar-bg-color-2 .searchNlogin.expanded .search-icon,

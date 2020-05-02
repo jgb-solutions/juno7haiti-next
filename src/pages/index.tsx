@@ -3,112 +3,69 @@ import fetch from 'node-fetch'
 import { GetStaticProps } from 'next'
 import InfiniteScroll from 'react-infinite-scroller'
 
-import useAllNews from '../hooks/useAllNews'
+import useAllPosts from '../hooks/useAllPosts'
 import { API_URL } from '../utils/constants'
 import MainLayout from '../components/layouts/Main'
-import NewsInterface from '../interfaces/NewsInterface'
+import PostInterface from '../interfaces/PostInterface'
+import ShareButtons from '../components/Share'
 
-export default function AllNews({ posts }: { posts: NewsInterface[] }) {
-  const { data: newsData, loading, error, hasMore, loadMore } = useAllNews(posts)
+export default function AllNews({ posts }: { posts: PostInterface[] }) {
+  const { data: postData, loading, hasMore, loadMore } = useAllPosts(posts)
 
   return (
     <MainLayout>
       <InfiniteScroll
-        pageStart={2}
+        pageStart={3}
         loadMore={loadMore}
         hasMore={hasMore}
-        loader={<p key="isLoading">Chargement...</p>}
-        useWindow={false}
+        loader={<img key="loader" src="/assets/images/loader.gif" width="100" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: 15 }} />}
+        useWindow={true}
         initialLoad={false}
       >
         <div className="row" key="wrapper">
-          {newsData.map((news: NewsInterface) => (
-            <div className="col-md-4" key={news.hash}>
-              {news.title}
+          {postData.map((post: PostInterface, index) => (
+            <div className="col-md-3 col-sm-4" key={index}>
               <div className="tr-section">
                 <div className="tr-post">
-                  <div className="entry-header">
-                    <div className="entry-thumbnail">
-                      <a href="https://demo.themeregion.com/newshub/details.html">
-                        <img className="img-fluid" src="/assets/images/44.jpg" alt="Image" />
-                      </a>
-                    </div>
+                  <div className="entry-thumbnail">
+                    <a href={post.link} target="_blank">
+                      <img className="img-fluid" src={post.image_url} alt={post.title} />
+                    </a>
                   </div>
                   <div className="post-content">
                     <div className="entry-meta">
-                      <ul>
-                        <li>
-                          <ul>
-                            <li>Partager</li>
-                            <li>
-                              <a
-                                href="https://demo.themeregion.com/newshub/index4.html#"
-                              ><i
-                                className="fa fa-facebook"
-                                aria-hidden="true"
-                              ></i
-                                ></a>
-                            </li>
-                            <li>
-                              <a
-                                href="https://demo.themeregion.com/newshub/index4.html#"
-                              ><i
-                                className="fa fa-twitter"
-                                aria-hidden="true"
-                              ></i
-                                ></a>
-                            </li>
-                            <li>
-                              <a
-                                href="https://demo.themeregion.com/newshub/index4.html#"
-                              ><i
-                                className="fa fa-google-plus"
-                                aria-hidden="true"
-                              ></i
-                                ></a>
-                            </li>
-                            <li>
-                              <a
-                                href="https://demo.themeregion.com/newshub/index4.html#"
-                              ><i className="fa fa-rss" aria-hidden="true"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      <ShareButtons post={post} />
                     </div>
                     <h2 className="entry-title">
-                      <a
-                        href="https://demo.themeregion.com/newshub/details.html"
-                      >Herkey Spot VS Rocket Warrior Live Cricket Match</a
-                      >
+                      <a href={post.link} dangerouslySetInnerHTML={{ __html: post.title }} target="_blank" />
                     </h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut ex ea
-                      commodo consequat.
-										</p>
+                    <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </InfiniteScroll>
-    </MainLayout>
+      </InfiniteScroll >
+    </MainLayout >
   )
 }
 
 export async function getStaticProps() {
-  const res = await fetch(API_URL)
-
-  const posts = (await res.json()).data
+  const res = await fetch(`${API_URL}?per_page=12`)
 
   return {
     props: {
-      posts,
+      posts: (await res.json()).map(mapPostFromResponse)
     },
   }
 }
+
+
+export const mapPostFromResponse = (post: any) => ({
+  id: post.id,
+  title: post.title.rendered,
+  image_url: post.jetpack_featured_media_url,
+  excerpt: post.excerpt.rendered,
+  link: post.link
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { DOMAIN, FB_APP_ID, APP_NAME, TWITTER_HANDLE } from '../utils/constants'
+import { DOMAIN, APP_NAME, TWITTER_HANDLE } from '../utils/constants'
 
 type Props = {
   title?: string,
@@ -14,16 +14,11 @@ type Props = {
 }
 
 export default function SEO({ title, url, description, type, image, imageWidth, imageHeight }: Props) {
-  const titleContent = `${APP_NAME} - ${title || "Authentique et Dynamique !!!"}`
+  const titleContent = `${APP_NAME} - ${title || "Actualité, Politique, Culture, Sport"}`
   const descriptionContent = description || `
-      ${APP_NAME} est une plateforme Fondée par de jeunes Haïtiens en 2016,
-      dont l'objectif est d'informer ses abonnés en tout le temps,
-      dont son nom Haiti info Toutan,
-      constituée de professionnels de l'information.
-      HIT se veut être un outil util pour ses lecteurs pour qui,
-      l'information  est d'une importance  capitale dans leur quotidien.
+      Juno7, Haïti News : Agence de Presse Numérique. Actualité et Informations Nationales et Internationales: Politique, Sport, Culture. Plus d'un Million d'Abonnés
   `
-  const imageContent = image || `https://files.infotoutan.com/images/03kpJg2M2zsaY3GmdRUn50OKQfua2p84ETrg2L3V.jpeg`
+  const imageContent = image || `/assets/images/logo-juno7.jpg`
 
   return (
     <>
@@ -37,7 +32,7 @@ export default function SEO({ title, url, description, type, image, imageWidth, 
         {imageWidth && <meta property="og:image:width" content={`${imageWidth}`} key="image_width" />}
         {imageHeight && <meta property="og:image:height" content={`${imageHeight}`} key="image_height" />}
 
-        <meta property="fb:app_id" content={FB_APP_ID} key="fb_app_id" />
+        {/* <meta property="fb:app_id" content={FB_APP_ID} key="fb_app_id" /> */}
 
         <meta name="twitter:card" content="summary" key="twitter_card" />
         <meta name="twitter:site" content={`@${TWITTER_HANDLE}`} key="twitter_site" />

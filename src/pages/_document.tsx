@@ -50,20 +50,20 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          {/* {process.env.NODE_ENV === 'production' && (
+          {process.env.NODE_ENV === 'production' && (
             <>
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161910284-1"></script>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81362147-3"></script>
               <script dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
 
-                  gtag('config', 'UA-161910284-1');
+                  gtag('config', 'UA-81362147-3');
                 `
               }} />
             </>
-          )} */}
+          )}
         </body>
       </Html>
     )

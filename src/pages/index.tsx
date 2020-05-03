@@ -23,7 +23,7 @@ export default function AllNews({ posts }: { posts: PostInterface[] }) {
       >
         <div className="row" key="wrapper">
           {postData.map((post: PostInterface, index) => (
-            <div className="col-md-3 col-sm-4" key={index}>
+            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6" key={index}>
               <div className="tr-section">
                 <div className="tr-post">
                   <div className="entry-thumbnail">

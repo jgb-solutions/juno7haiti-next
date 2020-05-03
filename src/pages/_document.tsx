@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=180%2C180&#038;ssl=1" />
           <meta name="msapplication-TileImage" content="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=270%2C270&#038;ssl=1" />
 
-          {/* <script dangerouslySetInnerHTML={{
+          <script dangerouslySetInnerHTML={{
             __html: `
               window.onload = function(e) {
                 loadAdAndPushcripts()
@@ -39,12 +39,12 @@ export default class MyDocument extends Document {
                   var adsense = document.createElement("script");
                   adsense.className = "adsense-script";
                   adsense.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-                  adsense.setAttribute('data-ad-client', "ca-pub-3793163111580068")
+                  adsense.setAttribute('data-ad-client', "ca-pub-7203147191748397")
                   document.body.appendChild(adsense);
                 }
               }
             `
-          }} /> */}
+          }} />
         </Head>
         <body>
           <Main />

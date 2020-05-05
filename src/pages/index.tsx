@@ -19,7 +19,7 @@ export default function AllNews({ posts }: { posts: PostInterface[] }) {
         pageStart={3}
         loadMore={loadMore}
         hasMore={hasMore}
-        loader={<img key="loader" src="/assets/images/loader.gif" width="100" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: 15 }} />}
+        loader={<img key="loader" src="https://i0.wp.com/juno7haiti.com/assets/images/loader.gif?w=100" width="100" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', marginBottom: 15 }} />}
         useWindow={true}
         initialLoad={false}
       >

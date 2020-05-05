@@ -9,19 +9,8 @@ export default class MyDocument extends Document {
       <Html lang="fr">
         <Head>
           <meta charSet="ut8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" key="http-equiv" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" key="http-equiv" />
           <meta name="viewport" content="width=device-width, initial-scale=1" key="viewport" />
-
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-          />
-
-          <link rel="stylesheet" href="/assets/css/main.css" />
 
           <link rel="icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=32%2C32&#038;ssl=1" sizes="32x32" />
           <link rel="icon" href="https://i1.wp.com/www.juno7.ht/wp-content/uploads/2019/01/cropped-1024j7.jpg?fit=192%2C192&#038;ssl=1" sizes="192x192" />

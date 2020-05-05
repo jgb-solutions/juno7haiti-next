@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { APP_NAME } from '../utils/constants'
+import '../css/tailwind.css'
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props

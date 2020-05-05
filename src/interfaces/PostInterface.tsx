@@ -4,4 +4,5 @@ export default interface PostInterface {
   image_url: string
   title: string
   link: string
+  date: string
 }

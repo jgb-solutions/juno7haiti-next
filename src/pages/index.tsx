@@ -53,13 +53,14 @@ export default function AllNews({ posts }: { posts: PostInterface[] }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${API_URL}?per_page=12`)
 
   return {
     props: {
       posts: (await res.json()).map(mapPostFromResponse)
     },
+    unstable_revalidate: 5
   }
 }
 
